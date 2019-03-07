@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: splunk
+  labels:
+    app: splunk
+spec:
+  type: ClusterIP
+  selector:
+    app: splunk
+  ports:
+  - name: splunk-port
+    protocol: TCP
+    port: 8000
+    targetPort: 8000
+  - name: collector-port
+    protocol: TCP
+    port: 8088
+    targetPort: 8088  
